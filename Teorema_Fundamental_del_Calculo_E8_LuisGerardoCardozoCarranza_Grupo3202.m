@@ -34,7 +34,7 @@ exp4=3;
 %Proceso de operacion por T.F.C
 operacion=(B.^exp1*x./exp4-B*x.^exp1./exp2+x.^exp4./exp3)-(A.^exp1*x./exp4-A*x.^exp1./exp2+x.^exp4./exp3)
 %Imprime el valor de la derivada utilizando el T.F.C.
-fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
+fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',(operacion))
 
 %Define los intervalos y el numero de rectangulos.
 a =  0;
@@ -48,18 +48,18 @@ base = (b-a)/n;
 x =a:base:(b-base);
 
 %Representa la altura
-altura=int((1/2*a-1/2*x).^2);
+altura=(1/2(x));
 
 %Calcula el valor de cada uno de los rectangulos.
 area = base*altura;
 
 %Establece    la    linea   que   forma  la funcion
-x2 = linspace(0,a,100);
-y2 =int(2(t)./1+t.^2);
+x2 = linspace(0,1,100);
+y2 =(1/2(x));
 
-%Inicio del  intervalo, fin del intervalo, numero de rectangulos.
-xa = linspace(0,a,100);
-yab =int((1/2*a-1/2*x).^2);
+%Inicio del  intervalo, fin del intervalo, numero de rectangulos(a=1).
+xa = linspace(0,1,100);
+yab =(1/2(x));
 
 %Dibuja una  grafica de barras sin espacios
 g = bar(xa,yab,'histc');
