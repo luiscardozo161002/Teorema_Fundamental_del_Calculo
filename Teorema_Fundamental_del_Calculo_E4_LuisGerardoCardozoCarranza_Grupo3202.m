@@ -20,18 +20,18 @@ pkg load symbolic
 syms y;
 
 %La integracion se realizara respecto a la variable simbolica por defecto (x). 
-TFC=1 + 1/2*y./y^2;
+TFC=1 + y.^1/2./y.^2;
 int(TFC)
 ans = (sym)
 
 
 %Define las variables y exponente a utilizar
 A= 1;
-B= 2;
+B= 4;
 exp1=2;
 
 %Proceso de operacion por T.F.C
-operacion=(A+(log(A)./exp1))-(B+(log(B)./exp1))
+operacion=(A+log(A)./(exp1))-(B+log(B)./(exp1));
 
 %Imprime el valor de la derivada utilizando el T.F.C.
 fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
@@ -49,18 +49,18 @@ base = (b-a)/n;
 x =a:base:(b-base);
 
 %Representa la altura
-altura=(x.^2-2*x+3);
+altura=(1+y.^1/2./y.^2);
 
 %Calcula el valor de cada uno de los rectangulos.
 area = base*altura;
 
 %Establece    la    linea   que   forma  la funcion
 x2 = linspace(1,4,100);
-y2 = (x.^2-2*x+3);
+y2 = (1 + y.^1/2./y.^2);
 
 %Inicio del  intervalo, fin del intervalo, numero de rectangulos.
 xa = linspace(1,4,100);
-yab = (x.^2-2*x+3);
+yab = (1 + y.^1/2./y.^2);
 
 %Dibuja una  grafica de barras sin espacios
 g = bar(xa,yab,'histc');
