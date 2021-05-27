@@ -20,28 +20,28 @@ pkg load symbolic
 syms x;
 
 %La integracion se realizara respecto a la variable simbolica por defecto (x). 
-TFC=x*x./1/2*25+3*x;
+TFC=x*x./25+3*x.^1/2;
 int(TFC)
 ans = (sym)
 
 
 %Define las variables y exponente a utilizar
-A= 3;
-B= 0;
-exp1=2;
-exp2=3;
-exp3=6;
+%Aplique valor absoluto al resultado de la operacion ya que al tener los enteros como tal, me daría un resultado negativo.
+A=(3);
+B=(0);
 
-%Proceso de operacion por T.F.C
-operacion=((25*B.^exp2./exp3)+(3*B.^exp1./exp1))-((25*A.^exp2./exp3)+(3*A.^exp1./exp1))
+%Proceso de operacion por T.F.C_Se elimino a B ya que sus valores son de 0 y todo núm.*0=0 
+operacion=(B.^2/75+3*B.^2/4)-(A.^2/75+3*A.^2/4);
 
 %Imprime el valor de la derivada utilizando el T.F.C.
-fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
+%Aplique valor absoluto al resultado de la operacion ya que al tener los enteros como tal, me daría un resultado negativo.
+fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',abs(operacion))
 
 %Define los intervalos y el numero de rectangulos.
 a = 3;
 b = 0;
 n = 100;
+%√25+3x=0, -25/3=-8.3 Aplicamos valor absoluto ya que la tangente no puede quedar negativa (-8.3)-1= 8.3
 
 %Determina la longitud de la base de x.
 base = (b-a)/n;
@@ -50,18 +50,18 @@ base = (b-a)/n;
 x =a:base:(b-base);
 
 %Representa la altura
-altura=(x./sqrt(25+3(x)));
+altura=(x./8.3);
 
 %Calcula el valor de cada uno de los rectangulos.
 area = base*altura;
 
 %Establece    la    linea   que   forma  la funcion
-x2 = linspace(1,4,100);
-y2 =(x./sqrt(25+3(x)));
+x2 = linspace(0,3,100);
+y2 = (x./8.3);
 
 %Inicio del  intervalo, fin del intervalo, numero de rectangulos.
-xa = linspace(1,4,100);
-yab =(x./sqrt(25+3(x)));
+xa = linspace(0,3,100);
+yab =(x./8.3);
 
 %Dibuja una  grafica de barras sin espacios
 g = bar(xa,yab,'histc');
