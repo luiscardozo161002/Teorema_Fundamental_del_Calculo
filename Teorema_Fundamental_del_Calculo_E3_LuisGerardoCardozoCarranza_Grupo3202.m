@@ -26,7 +26,7 @@ ans = (sym)
 A=0;
 B=8;
 %Proceso de operacion por T.F.C
-operacion=(2*B.^1/2+1./(1/2))-(2*A.^1/2+1./(1/2))
+operacion=(2*B.^1/2+1./(1/2))-(2*A.^1/2+1./(1/2));
 
 %Imprime el valor de la derivada utilizando el T.F.C.
 fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
