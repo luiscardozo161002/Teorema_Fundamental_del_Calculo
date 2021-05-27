@@ -8,7 +8,7 @@
 % Notes			:Requiere aplicacion octave usar en consola preferentemente.
 %                    1
 %Actividad_Ejercicio ∫  y^2/y+2 dy
-%                   -1
+%                   -1 
 
 %limpia la pantalla y las variables.
 clc, clear  
@@ -27,13 +27,11 @@ ans = (sym)
 %Define las variables y exponente a utilizar
 A= -1;
 B=  1;
-exp1=2;
 
 %Proceso de operacion por T.F.C
-operacion=(A.^exp1./exp1+exp1*A)-(B.^exp1./exp1+exp1*B)
-
+operacion=((1.5)+2*1)-((1)+2*-1);
 %Imprime el valor de la derivada utilizando el T.F.C.
-fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
+fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.0f\n',operacion)
 
 %Define los intervalos y el numero de rectangulos.
 a = -1;
