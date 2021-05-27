@@ -29,7 +29,7 @@ A= -1;
 B=  1;
 
 %Proceso de operacion por T.F.C
-operacion=((1.5)+2*1)-((1)+2*-1);
+operacion=((2)+2*1)-((1.5)+2*-1);
 %Imprime el valor de la derivada utilizando el T.F.C.
 fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.0f\n',operacion)
 
