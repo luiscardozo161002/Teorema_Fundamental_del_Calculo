@@ -20,22 +20,19 @@ pkg load symbolic
 syms t;
 
 %La integracion se realizara respecto a la variable simbolica por defecto (x). 
-TFC=2*t*t*t./1+t.^2;
+TFC=2*t*t./1+t.^2;
 int(TFC)
 ans = (sym)
 
 %Define las variables y exponente a utilizar
 A=  2;
 B=  3;
-exp1=2;
-exp2=3;
-exp3=4;
 
 %Proceso de operacion por T.F.C
-operacion=(B.^exp3./exp1+B.^exp2./exp2)-(A.^exp3./exp1+B.^exp2./exp2)
+operacion=((B).^3)-((A).^2);
 
 %Imprime el valor de la derivada utilizando el T.F.C.
-fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
+fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.0f\n',operacion)
 
 %Define los intervalos y el numero de rectangulos.
 a =  2;
@@ -49,18 +46,18 @@ base = (b-a)/n;
 x =a:base:(b-base);
 
 %Representa la altura
-altura=int(2(t)./1+t.^2);
+altura=((t).^3);
 
 %Calcula el valor de cada uno de los rectangulos.
 area = base*altura;
 
 %Establece    la    linea   que   forma  la funcion
 x2 = linspace(2,3,100);
-y2 =int(2(t)./1+t.^2);
+y2 =((t).^3);
 
 %Inicio del  intervalo, fin del intervalo, numero de rectangulos.
 xa = linspace(2,3,100);
-yab =int(2(t)./1+t.^2);
+yab =((t).^3);
 
 %Dibuja una  grafica de barras sin espacios
 g = bar(xa,yab,'histc');
