@@ -20,20 +20,13 @@ pkg load symbolic
 syms x;
 
 %La integracion se realizara respecto a la variable simbolica por defecto (x). 
-TFC=1/2*2.7/2*x;
+TFC=2*x.^1/2+x.^1/3;
 int(TFC)
 ans = (sym)
-
-
-
-%Define las variables y exponente a utilizar
-A= 0;
-B= 8;
-exp1=2;
-exp2=80;
-
+A=0;
+B=8;
 %Proceso de operacion por T.F.C
-operacion=(2*B.^exp1./exp2)-(2*A.^exp1./exp2)
+operacion=(2*B.^1/2+1./(1/2))-(2*A.^1/2+1./(1/2))
 
 %Imprime el valor de la derivada utilizando el T.F.C.
 fprintf('El valor de la derivada al utilizar el T.F.C.es:%2.1f\n',operacion)
@@ -53,7 +46,7 @@ x =a:base:(b-base);
 altura=x./sqrt(1+2*x.^2);
 
 %Calcula el valor de cada uno de los rectangulos.
-area = base*altura;
+area =base*altura;
 
 %Establece    la    linea   que   forma  la funcion
 x2 = linspace(0,3,100);
