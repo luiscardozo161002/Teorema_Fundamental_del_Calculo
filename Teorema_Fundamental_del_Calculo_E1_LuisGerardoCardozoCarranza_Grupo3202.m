@@ -33,6 +33,8 @@ y=(x.^3);
 plot(x,y)
 %Dibuja la cuadricula de la grafica
 grid on
+%Asigna un nombre a la grafica 
+title("Ejericicio 1: Integral definida de -1 hasta 3_ x^3 dx ");
 %Continua graficando despues de una grafica existente
 hold on
 %Grafica la funcion
